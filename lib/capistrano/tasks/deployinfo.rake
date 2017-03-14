@@ -5,7 +5,7 @@ namespace :deploy do
         tags = capture("git tag |sort -n")
         git_tag = tags.split("\n").last
         commits_since = capture("git rev-list `git rev-list --tags --no-walk --max-count=1`..HEAD --count")
-        if commits_since == 0
+        if commits_since == "0"
           set :app_tag, fetch(:git_tag)
         else
           set :app_tag, "#{commits_since}-ahead-of-#{git_tag}"
