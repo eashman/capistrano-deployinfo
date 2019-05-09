@@ -18,7 +18,7 @@ namespace :deploy do
                 deployed_at: Time.now.strftime("%a %b %d %Y, %H:%M:%S"),
                 unix_time: Time.now.to_i,
                 branch: fetch(:branch),
-                user: local_user.strip,
+              #  user: local_user.strip,
                 full_sha: rev,
                 release: release_timestamp,
                 sha: rev[0..6]
